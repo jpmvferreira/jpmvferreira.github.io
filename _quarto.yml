@@ -1,0 +1,80 @@
+project:
+  type: website
+
+  render:
+    - "*"
+    - "!LICENSE.md"
+    - "!README.md"
+    - "!personal/**"
+    - "!node_modules/**"
+
+  resources:
+    - "assets/www/*"
+
+format:
+  html:
+    # custom theme
+    theme: assets/stylesheets/coeos.scss
+
+    # this is responsible for providing highlight on parent navbar entry when a child is selected
+    # requires the file `assets/js/navbar-active-parent.js`
+    include-in-header:
+      - text: |
+          <script src="/assets/js/navbar-active-parent.js"></script>
+          <script>
+            // Additional script to force active state for parent items
+            document.addEventListener('DOMContentLoaded', function() {
+              // Check if we're on a page that should highlight the "Talks" parent
+              const path = window.location.pathname;
+              if (path.includes('/talks.') || path.includes('/outreach.')) {
+                // Find the Talks dropdown and add active-parent class
+                document.querySelectorAll('.navbar-nav .nav-link.dropdown-toggle').forEach(function(item) {
+                  if (item.textContent.trim() === 'Talks') {
+                    item.classList.add('active-parent');
+                  }
+                });
+              }
+            });
+          </script>
+
+    smooth-scroll: true
+
+website:
+  title: "José Ferreira"
+  site-url: "https://www.jpferreira.me"
+  description: "José Ferreira personal website"
+  favicon: "assets/images/favicon.png"
+
+  search: false
+
+  navbar:
+    title: "Home"
+
+    right:
+      #- text: Blog
+      #  href: blog.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "Papers"
+        href: papers.qmd
+      - text: "Talks"
+        menu:
+          - text: Academic
+            href: talks.qmd
+          - text: Outreach
+            href: outreach.qmd
+      - text: "About"
+        href: about.qmd
+
+  page-footer:
+    center:
+      - text: "{{< iconify fa-brands:github >}} Source Code"
+        href: "https://github.com/jpmvferreira/website"
+      - text: "{{< iconify fa-regular:copyright >}} BY-NC-SA 4.0"
+        href: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
+  back-to-top-navigation: true
+
+# if the code doesn't change, the results of the computation are cached and re-used
+execute:
+  freeze: true

@@ -1,0 +1,408 @@
+---
+title-block-style: none
+title-block-banner: false
+---
+
+<!-- NOTES:
+- x goes from left to right
+- y is zero on top left corner, increases top to bottom
+-->
+
+<!-- imports --->
+<script src="https://unpkg.com/mathjs@14.4.0/lib/browser/math.js"></script>
+
+<!-- HTML element for the game -->
+```{=html}
+<div id="my-content">
+  <canvas id="pongCanvas"></canvas>
+</div>
+```
+
+<!-- CSS -->
+<style>
+  footer.footer {
+    display: none;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;  /* hide scrollbar */
+  }
+
+  #quarto-content {
+    width: 100%;
+    height: 100%;  /* ensure it takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #quarto-document-content {
+    width: 100%;
+    height: 100%;  /* make it take up the full space of #quarto-content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #my-content {
+    width: 100%;
+    height: 100%;       /* allow container to take the full height of #quarto-document-content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;  /* set maximum width */
+    max-height: 800px;  /* set maximum height */
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #909090;  /* add a border */
+    border-radius: 8px;           /* add rounded corners */
+  }
+</style>
+
+<!-- game in JS -->
+<script>
+  /************** event listeners for key presses **************/
+  document.addEventListener("keydown", (e) => {
+    if (!gameStarted) {
+      gameStarted = true;
+      requestAnimationFrame(gameLoop);
+    }
+
+    if (e.key === "ArrowLeft" ) player1Left  = true;
+    if (e.key === "ArrowRight") player1Right = true;
+    if (e.key === "ArrowLeft" ) player2Left  = true;
+    if (e.key === "ArrowRight") player2Right = true;
+  });
+
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "ArrowLeft" ) player1Left  = false;
+    if (e.key === "ArrowRight") player1Right = false;
+    if (e.key === "ArrowLeft" ) player2Left  = false;
+    if (e.key === "ArrowRight") player2Right = false;
+  });
+
+  /************** event listeners for touch support **************/
+  document.addEventListener("touchstart", handleTouchStart);
+  document.addEventListener("touchmove", handleTouchMove);
+  document.addEventListener("touchend", handleTouchEnd);
+
+  function handleTouchStart(e) {
+    if (!gameStarted) {
+      gameStarted = true;
+      requestAnimationFrame(gameLoop);
+    }
+
+    touchX = e.touches[0].clientX;
+    playerTouchMove = true;
+  }
+
+  function handleTouchMove(e) {
+    touchX = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    playerTouchMove = false;
+  }
+
+  /************** configure window resize events **************/
+  window.addEventListener("resize", resizeCanvas);
+
+  function resizeCanvas() {
+    const container = document.getElementById("my-content");
+    const containerRect = container.getBoundingClientRect();
+
+    // fit the canvas height to the viewport height
+    canvas.height = window.innerHeight;
+
+    // set the canvas width to match the container's width, but ensure it doesn't exceed the viewport width
+    canvas.width = Math.min(containerRect.width, window.innerWidth);
+
+    // ensure the canvas height does not exceed the container's height
+    if (canvas.height > containerRect.height) {
+      canvas.height = containerRect.height;
+    }
+
+    // reset paddles
+    player1X = canvas.width / 2 - paddleWidth / 2;
+    player2X = canvas.width / 2 - paddleWidth / 2;
+
+    // reset ball
+    resetBall();
+
+    // reset BH
+    BH.x      = canvas.width  / 2;
+    BH.y      = canvas.height / 2;
+    BH.radius = (1/30)*Math.min(canvas.width, canvas.height);
+  }
+
+  /************** the ODE system we're solving **************/
+  // dY⃗/dt = f(Y⃗)
+  // Y⃗ = (r, dr, phi, dphi)
+  function f(t, Y) {
+    let r    = Y[0];
+    let dr   = Y[1];
+    let phi  = Y[2];
+    let dphi = Y[3];
+
+    return [dr, (r-3*BH.M)*dphi**2, dphi, -2*dr*dphi/r];
+  }
+
+  /************** draw objects on canvas **************/
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // draw concentric circles with gradient color and dashed boundaries
+    let gradientRadius = 0.5 * Math.min(canvas.width, canvas.height);
+
+    let gradient = ctx.createRadialGradient(
+      BH.x, BH.y, 0,              // inner circle
+      BH.x, BH.y, gradientRadius  // outer circle
+    );
+
+    gradient.addColorStop(0, "rgba(0, 0, 255, 0.25)");  // solid blue at the center
+    gradient.addColorStop(1, "rgba(0, 0, 255, 0)");     // transparent blue at the outer edge
+
+    ctx.fillStyle = gradient;
+
+    let N = 7;
+    for (let i = 1; i <= N; i++) {
+      const radius = gradientRadius * (i / N);
+
+      // fill the arc
+      ctx.beginPath();
+      ctx.arc(BH.x, BH.y, radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.closePath();
+
+      // draw dashed boundary
+      ctx.setLineDash([5, 5]);                          // dash pattern: X px dash, Y px gap
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.35)";  // line color
+      ctx.lineWidth = 1;                                // line width
+      ctx.beginPath();
+      ctx.arc(BH.x, BH.y, radius, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    ctx.setLineDash([]);  // reset line dash to solid for other drawings
+
+    // draw the black hole
+    ctx.beginPath();
+    ctx.arc(BH.x, BH.y, BH.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    // draw paddles
+    ctx.fillStyle = "white";
+    ctx.fillRect(player1X, 0, paddleWidth, paddleHeight);
+    ctx.fillRect(player2X, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+
+    // draw ball
+    ctx.beginPath();
+    ctx.arc(BH.x + ball.r*Math.cos(ball.phi), BH.y + ball.r*Math.sin(ball.phi), ball.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  /************** draw the start screen **************/
+  function drawStartScreen() {
+    // draw diagonal lines
+    const lineSpacing = 20;                           // spacing between lines
+    ctx.strokeStyle = "rgba(128, 128, 128, 0.25)";  // color of the lines
+    ctx.lineWidth = 10;
+
+    for (let x = -canvas.height; x < canvas.width; x += lineSpacing) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x + canvas.height, canvas.height);
+      ctx.stroke();
+    }
+
+    // draw text
+    const text = "Relativistic Pong\nPress to play";
+    const lines = text.split("\n");
+    const fontSize = 32;
+    ctx.fillStyle = "white";
+    ctx.font = `${fontSize}px Arial`;
+    ctx.textAlign = "center";
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 5;
+
+    const startY = canvas.height / 6 - (lines.length - 1) * fontSize / 2;
+    lines.forEach((line, index) => {
+      ctx.strokeText(line, canvas.width / 2, startY + index * fontSize);
+      ctx.fillText(line, canvas.width / 2, startY + index * fontSize);
+    });
+  }
+
+  /************** update game state **************/
+  function update(deltaTime) {
+    // auxiliary variable to tell whether there was a collision or not
+    let collision = false;
+
+    // move paddles using keyboard
+    if (player1Left  && player1X > 0) {
+      player1X -= 0.35 * deltaTime;
+      player2X -= 0.35 * deltaTime;
+    }
+    if (player1Right && player1X < canvas.width - paddleWidth) {
+      player1X += 0.35 * deltaTime;
+      player2X += 0.35 * deltaTime;
+    }
+
+    // move paddles using touch support
+    if (playerTouchMove && (touchX > 0 && touchX < canvas.width - paddleWidth)) {
+      player1X = touchX;
+      player2X = touchX;
+    }
+
+    // compute the ball position on the next time step
+    let Y0  = [ball.r, ball.dr, ball.phi, ball.dphi];  // Y⃗ = (r, dr, phi, dphi)
+    let dt  = [0., deltaTime];
+    let sol = math.solveODE(f, dt, Y0);
+
+    // assign solution to variables for readability
+    let r    = sol.y.at(-1)[0];
+    let dr   = sol.y.at(-1)[1];
+    let phi  = sol.y.at(-1)[2];
+    let dphi = sol.y.at(-1)[3];
+    let x    = BH.x + r*Math.cos(phi);
+    let y    = BH.y + r*Math.sin(phi);
+
+    // ball collision with left and right walls
+    // ball has to invert velocity on the x-axis
+    if (x - ball.radius < 0 || x + ball.radius > canvas.width) {
+      console.log("x collision")
+      ball.dr   = -Math.cos(2*phi)*dr + r*Math.sin(2*phi)*dphi;
+      ball.dphi = Math.sin(2*phi)*dr/r + Math.cos(2*phi)*dphi;
+      collision = true;
+    }
+
+    // ball collision with paddles
+    // ball has to invert velocity on the y-axis
+    if (y - ball.radius < paddleHeight && x > player1X && x < player1X + paddleWidth) {
+      console.log("bottom paddle collision")
+      ball.dr   = Math.cos(2*phi)*dr - r*Math.sin(2*phi)*dphi;
+      ball.dphi = -Math.sin(2*phi)*dr/r - Math.cos(2*phi)*dphi;
+      collision = true;
+    }
+
+    if (y + ball.radius > canvas.height - paddleHeight && x > player2X && x < player2X + paddleWidth) {
+      console.log("top paddle collision")
+      ball.dr   = Math.cos(2*phi)*dr - r*Math.sin(2*phi)*dphi;
+      ball.dphi = -Math.sin(2*phi)*dr/r - Math.cos(2*phi)*dphi;
+      collision = true;
+    }
+
+    // ball out of bounds
+    if (y - ball.radius < 0 || y + ball.radius > canvas.height) {
+      console.log("ball out of bounds")
+      resetBall();
+      collision = true;
+    }
+
+    // ball hit the BH
+    if (Math.pow(x - BH.x,2) + Math.pow(y - BH.y,2) < Math.pow(ball.radius + BH.radius,2)) {
+      console.log("ball hit the BH")
+      resetBall();
+      collision = true;
+    }
+
+    // update the ball position
+    if (! collision) {
+      ball.r    = r;
+      ball.phi  = phi;
+      ball.dr   = dr;
+      ball.dphi = dphi;
+    }
+  }
+
+  /************** reset ball position **************/
+  function resetBall() {
+    ball.r    = 100.;
+    ball.dr   = 0.25;
+    ball.phi  = Math.random() < 0.5 ? Math.PI/6. + Math.random() * Math.PI/6. : 4.*Math.PI/6. + Math.random() * Math.PI/6.;
+    ball.phi  = Math.random() < 0.5 ? ball.phi : -ball.phi;
+    ball.dphi = 0.;
+  }
+
+  /************** main game loop **************/
+  function gameLoop(timestamp) {
+    let deltaTime = 0;
+
+    // this is a hack to avoid the issue with having a very big deltaTime when user starts the game
+    if (lastTime != 0) {
+      deltaTime = timestamp - lastTime;
+    }
+    lastTime = timestamp;
+
+    update(deltaTime);
+    draw();
+    requestAnimationFrame(gameLoop);
+  }
+
+  /************** define variable **************/
+  // track the X position of the touch
+  let touchX = null;
+
+  // is the user pressing the screen?
+  let playerTouchMove = false;
+
+  // auxiliary variable to tell whether the game has started
+  let gameStarted = false
+
+  // define canvas
+  const canvas = document.getElementById("pongCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // paddle characteristics
+  const paddleWidth  = 100;
+  const paddleHeight = 10;
+
+  // BH object
+  const BH = {
+    x: canvas.width  / 2,
+    y: canvas.height / 2,
+    M: 25.,
+    radius: (1/30)*Math.min(canvas.width, canvas.height)
+  }
+
+  // initial configuration
+  let player1X = canvas.width / 2 - paddleWidth / 2;
+  let player2X = canvas.width / 2 - paddleWidth / 2;
+
+  // ball object
+  const ball = {
+    // initial conditions will match something out of bounds to avoid contaminating the start screen
+    // (!) not working
+    r:      100.,       // radial poisition
+    phi:    Math.PI/4,  // angular position
+    dr:     0.,         // radial velocity
+    dphi:   0.,         // angular velocity
+    radius: 10.         // radius of the ball (constant)
+  };
+
+  // paddle movement
+  let player1Left  = false;
+  let player1Right = false;
+  let player2Left  = false;
+  let player2Right = false;
+
+  // auxiliary variable to keep track of time steps
+  let lastTime = 0;
+
+  /************** initial canvas setup **************/
+  resizeCanvas();
+  draw();
+  drawStartScreen();
+</script>

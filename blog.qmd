@@ -1,0 +1,9 @@
+---
+page-layout: full
+title-block-style: none
+title-block-banner: false
+
+listing:
+  template: assets/ejs/blog.ejs
+  contents: blog
+---

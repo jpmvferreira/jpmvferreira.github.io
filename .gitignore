@@ -1,0 +1,33 @@
+# Personal stuff
+personal/
+
+# Quarto
+/.quarto/
+/_freeze/
+/_site/
+_quarto_internal_scss_error.scss
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python specific files
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.env
+.venv
+env/
+venv/
+ENV/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor specific files
+.vscode/
+.idea/
+
+# Node
+node_modules/

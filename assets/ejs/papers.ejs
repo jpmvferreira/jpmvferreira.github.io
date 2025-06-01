@@ -1,0 +1,175 @@
+<!-- add academicons and font awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- add MathJax -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<!-- CSS styling -->
+<style>
+  .paper-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .paper-item {
+    padding: 26px 0;
+    position: relative;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .paper-item:nth-child(1)  { animation-delay: 0.05s; }
+  .paper-item:nth-child(2)  { animation-delay: 0.1s;  }
+  .paper-item:nth-child(3)  { animation-delay: 0.15s; }
+  .paper-item:nth-child(4)  { animation-delay: 0.2s;  }
+  .paper-item:nth-child(5)  { animation-delay: 0.25s; }
+  .paper-item:nth-child(6)  { animation-delay: 0.3s;  }
+  .paper-item:nth-child(7)  { animation-delay: 0.35s; }
+  .paper-item:nth-child(8)  { animation-delay: 0.4s;  }
+  .paper-item:nth-child(9)  { animation-delay: 0.45s; }
+  .paper-item:nth-child(10) { animation-delay: 0.5s;  }
+  .paper-item:nth-child(11) { animation-delay: 0.55s; }
+  .paper-item:nth-child(12) { animation-delay: 0.6s;  }
+
+  .paper-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: 0.01em;
+    font-family: 'Latin Modern Math', 'STIX Two Math', 'STIX Two', 'Computer Modern', 'Times New Roman', serif;
+  }
+
+  /* MathJax specific styling to ensure consistency between title and LaTeX math */
+  .paper-title .MJX-TEX {
+    font-size: inherit !important;
+    color: inherit !important;
+  }
+
+  .paper-authors {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #d4d4d4;
+  }
+
+  .paper-journal {
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #a0a0a0;
+  }
+
+  .paper-links {
+    margin-top: 14px;
+  }
+
+  .paper-links a {
+    margin-right: 8px;
+    font-size: 18px;
+    transition: all .35s ease;
+    opacity: 0.85;
+    position: relative;
+    display: inline-block;
+  }
+
+  .paper-links a:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .paper-links a i {
+    font-size: 20px;
+  }
+
+  .paper-links a::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .paper-links a:hover::after {
+    opacity: 1;
+  }
+
+  /* anchor removal styles remain as a fallback */
+  .anchor-section {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+
+```{=html}
+<ul class="paper-list">
+  <% for (const paper of items) { %>
+    <li class="paper-item">
+      <!-- Changed from h3 to div to avoid anchor generation -->
+      <div class="paper-title"><%- paper.title %></div>
+      <p class="paper-authors"><%= paper.authors %></p>
+      <p class="paper-journal"><%= paper.journal %></p>
+
+      <div class="paper-links">
+        <% if (paper.arxiv) { %>
+          <a href="<%= paper.arxiv %>" target="_blank" aria-label="arXiv">
+            <i class="ai ai-arxiv"></i>
+          </a>
+        <% } %>
+
+        <% if (paper.inspire) { %>
+          <a href="<%= paper.inspire %>" target="_blank" aria-label="INSPIRE">
+            <i class="ai ai-inspire"></i>
+          </a>
+        <% } %>
+
+        <% if (paper.doi) { %>
+          <a href="<%= paper.doi %>" target="_blank" aria-label="DOI">
+            <i class="ai ai-doi"></i>
+          </a>
+        <% } %>
+
+        <% if (paper.github) { %>
+          <a href="<%= paper.github %>" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        <% } %>
+
+        <% if (paper.pdf) { %>
+          <a href="<%= paper.pdf %>" target="_blank" aria-label="PDF">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+        <% } %>
+      </div>
+    </li>
+  <% } %>
+</ul>
+```

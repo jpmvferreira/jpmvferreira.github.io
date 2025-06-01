@@ -1,0 +1,166 @@
+<!-- add academicons and font awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- add MathJax -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<!-- CSS styling -->
+<style>
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* card width */
+    gap: 3rem;                                                    /* horizontal space between cards */
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: body-mix(16%);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none !important;             /* remove underline from link */
+    cursor: pointer;
+    position: relative;
+  }
+
+  .project-card:nth-child(1)  { animation-delay: 0.05s; }
+  .project-card:nth-child(2)  { animation-delay: 0.1s;  }
+  .project-card:nth-child(3)  { animation-delay: 0.15s; }
+  .project-card:nth-child(4)  { animation-delay: 0.2s;  }
+  .project-card:nth-child(5)  { animation-delay: 0.25s; }
+  .project-card:nth-child(6)  { animation-delay: 0.3s;  }
+  .project-card:nth-child(7)  { animation-delay: 0.35s; }
+  .project-card:nth-child(8)  { animation-delay: 0.4s;  }
+  .project-card:nth-child(9)  { animation-delay: 0.45s; }
+  .project-card:nth-child(10) { animation-delay: 0.5s;  }
+  .project-card:nth-child(11) { animation-delay: 0.55s; }
+  .project-card:nth-child(12) { animation-delay: 0.6s;  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    border-color: body-mix(40%);
+  }
+
+  /* remove anchor symbol on hover */
+  .project-card:hover::before {
+    display: none !important;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: all 0.35s ease;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .project-info {
+    padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* custom title that doesn't use h3 to avoid Quarto's anchor generation */
+  .project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.8rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* add ellipsis if title is too long */
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    font-family: 'Latin Modern Math', 'STIX Two Math', 'STIX Two', 'Computer Modern', 'Times New Roman', serif;
+    transition: color 0.35s ease;
+  }
+
+  /* MathJax specific styling to ensure consistency between title and LaTeX math */
+  .paper-title .MJX-TEX {
+    font-size: inherit !important;
+    color: inherit !important;
+  }
+
+  .project-card:hover .project-title {
+    color: #ffffff;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: body-mix(80%);
+    margin-bottom: 0.2rem;
+  }
+
+  /* hide Quarto's auto-generated anchors everywhere */
+  .anchor-section {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* remove anchor functionality from heading */
+  h3 > a.anchor-section {
+    display: none !important;
+  }
+
+  /* even more aggressive, remove all pseudo-elements */
+  .project-info h3::before,
+  .project-info h3::after,
+  .project-card::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 767px) {
+    .projects-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-image {
+      height: 150px;
+    }
+  }
+</style>
+
+
+```{=html}
+<div class="projects-container">
+  <% for (const project of items) { %>
+    <a href="<%= project.url %>" target="_blank" class="project-card">
+      <img src="<%= project.image %>" alt="<%= project.title %>" class="project-image">
+      <div class="project-info">
+        <!-- use div instead of h3 to avoid Quarto's anchor generation -->
+        <div class="project-title"><%= project.title %></div>
+        <p class="project-description">
+          <%= project.description %>
+        </p>
+      </div>
+    </a>
+  <% } %>
+</div>
+```

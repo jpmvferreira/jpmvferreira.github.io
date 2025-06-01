@@ -1,0 +1,33 @@
+---
+title: "404"
+title-block-style: none
+title-block-banner: false
+---
+
+<style>
+  .quarto-title-block {
+    display: none;
+  }
+  div.spacing {
+    margin-top: 275px;
+  }
+  img {
+  max-width: 75%;
+  height: auto;
+  }
+  @font-face {
+    font-family: 'MedievalFont';
+    src: url('assets/fonts/Blacklettersh.ttf') format('truetype');
+  }
+  .medieval-text {
+    font-family: 'MedievalFont', serif;
+    color: #cfb66a;
+  }
+</style>
+
+::: {style="text-align: center;"}
+```{=html}
+<h1 class="medieval-text">404</h1>
+<img src="assets/images/404.png"/>
+```
+:::

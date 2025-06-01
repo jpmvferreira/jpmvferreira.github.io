@@ -1,0 +1,184 @@
+<!-- add academicons and font awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Add MathJax -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<!-- CSS styling -->
+<style>
+  /* Use theme variables from coeos.scss instead of custom variables */
+  .talks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Increased from 2rem to 3rem for more vertical spacing */
+    margin-top: 1.5rem;
+  }
+
+  .talk-item {
+    display: flex;
+    background-color: body-mix(16%);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+    border: 1px solid body-mix(50%);
+  }
+
+  .talk-item:nth-child(1)  { animation-delay: 0.05s; }
+  .talk-item:nth-child(2)  { animation-delay: 0.1s;  }
+  .talk-item:nth-child(3)  { animation-delay: 0.15s; }
+  .talk-item:nth-child(4)  { animation-delay: 0.2s;  }
+  .talk-item:nth-child(5)  { animation-delay: 0.25s; }
+  .talk-item:nth-child(6)  { animation-delay: 0.3s;  }
+  .talk-item:nth-child(7)  { animation-delay: 0.35s; }
+  .talk-item:nth-child(8)  { animation-delay: 0.4s;  }
+  .talk-item:nth-child(9)  { animation-delay: 0.45s; }
+  .talk-item:nth-child(10) { animation-delay: 0.5s;  }
+  .talk-item:nth-child(11) { animation-delay: 0.55s; }
+  .talk-item:nth-child(12) { animation-delay: 0.6s;  }
+
+  /* acho que o problema das rounded corners esta aqui, go figure */
+  .talk-image {
+    width: 280px;
+    height: 158px; /* 16:9 ratio */
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 7px; /* Apply rounded corners to all sides */
+  }
+
+  .talk-info {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .talk-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: 0.01em;
+    font-family: 'Latin Modern Math', 'STIX Two Math', 'STIX Two', 'Computer Modern', 'Times New Roman', serif;
+  }
+
+  /* MathJax specific styling to ensure consistency between title and LaTeX math */
+  .paper-title .MJX-TEX {
+    font-size: inherit !important;
+    color: inherit !important;
+  }
+
+  /* Add these styles to hide any anchor symbols */
+  .anchor-section {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .talk-meta {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-bottom: 0.8rem;
+    color: body-mix(67%); /* Use theme mix for muted text */
+  }
+
+  .talk-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .talk-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all .35s ease; /* Match theme transition timing */
+  }
+
+  .talk-links a:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .talk-links a i {
+    font-size: 16px;
+  }
+
+  .talk-links a::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .talk-links a:hover::after {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .talk-item {
+      flex-direction: column;
+    }
+
+    .talk-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border-radius: 7px; /* Apply rounded corners to all sides */
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+```{=html}
+<div class="talks-container">
+  <% for (const talk of items) { %>
+    <div class="talk-item">
+      <img src="<%= talk.image %>" alt="<%= talk.title %>" class="talk-image">
+      <div class="talk-info">
+        <div class="talk-title"><%- talk.title %></div>
+        <div class="talk-meta"><%- talk.date %> • <%= talk.venue %></div>
+        <div class="talk-links">
+          <% if (talk.pdf) { %>
+            <a href="<%= talk.pdf %>" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
+          <% } %>
+          <% if (talk.ppt) { %>
+            <a href="<%= talk.ppt %>" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
+          <% } %>
+          <% if (talk.recording) { %>
+            <a href="<%= talk.recording %>" target="_blank" aria-label="Recording"><i class="fa-solid fa-video"></i></a>
+          <% } %>
+          <% if (talk.github) { %>
+            <a href="<%= talk.github %>" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
+```

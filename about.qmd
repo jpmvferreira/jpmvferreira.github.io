@@ -1,0 +1,81 @@
+---
+title: "José Ferreira"
+subtitle: "PhD student in Physics, working on Numerical Relativity"
+image: assets/images/profile.jpg
+about:
+  id: about-header
+  template: solana
+  image-width: 13em
+  image-shape: rounded
+  links:
+    - icon: envelope-fill
+      href: mailto:jose@jpferreira.me
+    - icon: github
+      href: https://github.com/jpmvferreira/
+    - text: "{{< ai inspire >}}"
+      href: https://inspirehep.net/authors/2094296
+    - text: "{{< ai cv >}}"
+      href: /assets/www/CV.pdf
+
+format:
+  html:
+    grid:
+      body-width: 850px
+      sidebar-width: 225px
+      margin-width: 225px
+---
+
+<!-- CSS styling -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #quarto-content {
+    opacity: 0;
+    animation: fadeIn 0.75s ease forwards;
+  }
+</style>
+
+::: {#about-header}
+:::
+
+My name is José Ferreira and this is my website. In it, you will find everything that I think is relevant for me to share with the world. If you would like to know more about me, you can have a look at my short CV above. I make sure my publications are up-to-date in InspireHEP and all of my publicly available code is on Github. If you would like to contact me, feel free to drop me an e-mail.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
+### Education
+<div style="margin-top: -10px; margin-bottom: 10px; border-top: 1px solid #ccc;"></div>
+
+- **PhD Physics**, 09/2023 - Present <br>
+  *University of Aveiro*
+
+- **MSc Physics**, 09/2020 - 09/2022 <br>
+  *Faculty of Sciences, University of Lisbon*
+
+- **BSc Physics**, 09/2017 - 09/2020 <br>
+  *Faculty of Sciences, University of Lisbon*
+:::
+
+::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
+### Research Units
+<div style="margin-top: -10px; margin-bottom: 10px; border-top: 1px solid #ccc;"></div>
+
+- **Gr@v**, 09/2023 - Present <br>
+  [website](http://gravitation.web.ua.pt/)
+
+- **IAstro**, 09/2021 - 07/2023 <br>
+  [website](https://www.iastro.pt/)
+:::
+
+::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
+### Teaching
+<div style="margin-top: -10px; margin-bottom: 10px; border-top: 1px solid #ccc;"></div>
+
+- **Assistant**, 02/2022 - 07/2023 <br>
+  *Faculty of Sciences, University of Lisbon*
+:::
+
+::::

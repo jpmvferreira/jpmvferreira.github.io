@@ -1,0 +1,55 @@
+---
+page-layout: full
+title-block-style: none
+title-block-banner: false
+
+listing:
+  id: talks-listings
+  template: assets/ejs/talks.ejs
+
+  contents:
+    - title: "(In)stability of Q-Hairy Black Holes"
+      date:  "May 21 2025"
+      venue: "NewFunFICO Meeting, Valencia, Spain"
+      image: "assets/images/talks/NewFunFICO-2025.jpg"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Ef_ezMoLeFBPo8Sbb3oEbNQBcQq1Nm8Y-X9QNnhv-Ncm9Q?e=D6e96c"
+
+    - title: "Non-linear Superradiance of Charged Black Holes: Beyond Spherical Symmetry"
+      date:  "November 18 2024"
+      venue: "VI Amazonian Symposium on Physics, Belém, Brazil"
+      image: "assets/images/talks/VI-Amazonian-Symposium.jpg"
+      pdf: "https://ulisboa-my.sharepoint.com/:b:/g/personal/jpmferreira_fc_ul_pt/EUxRvN9h-ElBltQVD77D_uMBmcmpRpKg_YDdjYkUWSXsoQ?e=JeUePm"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/EZNSf5NZ8EdOnzv7buSkGAQBHwYKmRNBbSaTMubxaZitbQ?e=2ZFakk"
+
+    - title: "Using Standard Sirens to Test Non-Metric Theories of Gravity"
+      date:  "December 19 2023"
+      venue: "XVI Black Holes Workshop, Porto, Portugal"
+      image: "assets/images/talks/XVI-BH-Workshop.jpg"
+      pdf: "https://ulisboa-my.sharepoint.com/:b:/g/personal/jpmferreira_fc_ul_pt/EdebsDwhKQhNmeKRFn5ox8gBbDaQQ-nZRKsidV8VdMVx_g?e=E4VWml"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Ech9EyNx4lBFgGRjifkzp4sBhHT6w7utgD5XDX82tWnKeA?e=Dfs188"
+
+    - title: "Cosmological Tests on Non-Metricity Based Theories of Gravity"
+      date:  "September 20 2023"
+      venue: "Seminar at Gr@v, University of Aveiro"
+      image: "assets/images/talks/Seminar-Grav-2023.jpg"
+      pdf: "https://ulisboa-my.sharepoint.com/:b:/g/personal/jpmferreira_fc_ul_pt/EZzjUhhqsihMkjpvYV4C1C4BJ0xcxvbUPk-dwwX70gk8tA?e=vjqGOD"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/EZPvSy1yZIhAmcgshJbAejUBVbmCmV-OHpy9_mGL8uk6gw?e=T0cgPt"
+      recording: "https://youtu.be/6rRZ17WFGts?si=TfQB8O00qbb6wEJ4"
+
+    - title: "Testing $\\Lambda$-Free $f(Q)$ Cosmology"
+      date:  "May 3 2023"
+      venue: "Poster at Dark Matter and Stars, Lisbon, Portugal"
+      image: "assets/images/talks/Dark-Matter-and-Stars-2023.jpg"
+      pdf: "https://ulisboa-my.sharepoint.com/:b:/g/personal/jpmferreira_fc_ul_pt/EefqxrN7b0RHvkEixsuaV_QBACkdVQHMdvq7tmclNC_4cA?e=snmv5y"
+
+    - title: "Forecasting $F(Q)$ Cosmology with $\\Lambda$CDM Background using Standard Sirens"
+      date:  "May 4 2022"
+      venue: "Iberian Cosmology Meeting 2022, Barcelona, Spain"
+      image: "assets/images/talks/IberiCOS-2022.jpg"
+      pdf: "https://ulisboa-my.sharepoint.com/:b:/g/personal/jpmferreira_fc_ul_pt/ETz3iucmlbRLhqXRpZvpfowBbFZDfwXgw6cYjfPo1LJ5Cg?e=NjMfpI"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Ef6hXiOnbRlIgzrh7L6PzkMBUKHb_QoUnophsyrkvh8i2Q?e=DvvkIQ"
+      recording: "https://youtu.be/1SeXRTaK-Xw"
+---
+
+::: {#talks-listings}
+:::

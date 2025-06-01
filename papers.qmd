@@ -1,0 +1,33 @@
+---
+page-layout: full
+title-block-style: none
+title-block-banner: false
+
+listing:
+  template: assets/ejs/papers.ejs
+
+  contents:
+    - title: Testing $\Lambda$-free $f(Q)$ Cosmology
+      authors: <b>J. Ferreira</b>, T. Barreiro, J. Mimoso, N. J. Nunes
+      journal: Physical Review D
+      arxiv: https://arxiv.org/abs/2306.10176
+      inspire: https://inspirehep.net/literature/2702959
+      doi: https://doi.org/10.1103/PhysRevD.108.063521
+      github: https://github.com/jpmvferreira/testing-L-free-fQ-cosmology
+
+    - title: Constraining $f(Q)$ Cosmology with Standard Sirens
+      authors: <b>J. Ferreira</b>
+      journal: MSc Thesis
+      arxiv: https://arxiv.org/abs/2303.12674
+      inspire: https://inspirehep.net/literature/2645080
+      doi:
+      github: https://github.com/jpmvferreira/msc-code
+
+    - title: Forecasting $F(Q)$ cosmology with $\Lambda$CDM background using standard sirens
+      authors: <b>J. Ferreira</b>, T. Barreiro, J. Mimoso, N. J. Nunes
+      journal: Physical Review D
+      arxiv: https://arxiv.org/abs/2203.13788
+      inspire: https://inspirehep.net/literature/2058511
+      doi: https://doi.org/10.1103/PhysRevD.105.123531
+      github: https://github.com/jpmvferreira/forecasting-FQ-cosmology-with-SS
+---

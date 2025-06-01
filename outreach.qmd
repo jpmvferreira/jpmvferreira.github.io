@@ -1,0 +1,27 @@
+---
+page-layout: full
+title-block-style: none
+title-block-banner: false
+
+listing:
+  template: assets/ejs/talks.ejs
+
+  contents:
+    - title: "Echoes and Shadows: How to Detect Black Holes"
+      date:  "April 30, 2025"
+      venue: "University of Aveiro"
+      image: "assets/images/outreach/Xperimenta2025.png"
+      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/EXW5Y7Z986ZLhuDg74UcZScBPditNqGoFPJqvkWEyIgzUg?e=Dtm0l8"
+
+    - title: "Cosmic Jungle: Searching for Black Holes"
+      date:  "May 3, 2024"
+      venue: "University of Aveiro"
+      image: "assets/images/outreach/Xperimenta2024.jpg"
+      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Eb5qdTNrC95HgqiVsxIkLEsBU-a7N35CuKWHIwvIrT7Flg?e=TEQzDR"
+
+    - title: "When a Black Hole Falls Inside... Another Black Hole"
+      date:  "April 15, 2023"
+      venue: "Torres Vedras, Portugal"
+      image: "assets/images/outreach/Ignite-Iastro-Torres-Vedras.jpg"
+      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Ec29Pdf9JjpHv3S4dcTdrjEB2Abo3Qeu6NNWivAB8Ud6ng?e=6VH0Pw"
+---
