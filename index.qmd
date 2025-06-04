@@ -140,7 +140,7 @@ title-block-banner: false
     // reset BH
     BH.x      = canvas.width  / 2;
     BH.y      = canvas.height / 2;
-    BH.radius = (1/30)*Math.min(canvas.width, canvas.height);
+    BH.radius = (1/15. - 1/(30.*Math.PI)*(Math.atan((Math.min(canvas.width, canvas.height) - 600.)/50.) + Math.PI/2.))*Math.min(canvas.width, canvas.height);
   }
 
   /************** the ODE system we're solving **************/
