@@ -168,6 +168,12 @@
             <i class="fas fa-file-pdf"></i>
           </a>
         <% } %>
+
+        <% if (paper.aux) { %>
+          <a href="<%= paper.aux %>" aria-label="Auxiliary Content">
+            <i class="fa-solid fa-folder-open"></i>
+          </a>
+        <% } %>
       </div>
     </li>
   <% } %>
