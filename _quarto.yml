@@ -1,6 +1,7 @@
 project:
   type: website
 
+  # render everything, '*', except whatever follows
   render:
     - "*"
     - "!LICENSE.md"
@@ -8,8 +9,10 @@ project:
     - "!personal/**"
     - "!node_modules/**"
 
+  # explicitely include these files
   resources:
     - "assets/www/*"
+    - "assets/csl/*"
 
 format:
   html:
@@ -78,3 +81,10 @@ website:
 # if the code doesn't change, the results of the computation are cached and re-used
 execute:
   freeze: true
+
+# create a new cross reference key for videos
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Video
+      key: vid
