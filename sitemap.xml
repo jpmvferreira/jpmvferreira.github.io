@@ -2,26 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jpferreira.me/talks.html</loc>
-    <lastmod>2025-06-01T17:05:39.239Z</lastmod>
+    <lastmod>2025-07-28T21:07:20.312Z</lastmod>
   </url>
   <url>
     <loc>https://www.jpferreira.me/papers.html</loc>
-    <lastmod>2025-06-01T17:05:39.239Z</lastmod>
+    <lastmod>2025-07-28T20:45:19.823Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jpferreira.me/index.html</loc>
-    <lastmod>2025-06-04T21:27:32.056Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jpferreira.me/blog/2025-04-18_test/index.html</loc>
-    <lastmod>2025-06-01T17:05:39.236Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jpferreira.me/about.html</loc>
-    <lastmod>2025-06-01T17:05:39.189Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jpferreira.me/blog/2025-04-17_test2/index.html</loc>
+    <loc>https://www.jpferreira.me/outreach.html</loc>
     <lastmod>2025-06-01T17:05:39.236Z</lastmod>
   </url>
   <url>
@@ -29,8 +17,24 @@
     <lastmod>2025-06-01T17:05:39.236Z</lastmod>
   </url>
   <url>
-    <loc>https://www.jpferreira.me/outreach.html</loc>
+    <loc>https://www.jpferreira.me/blog/2025-04-17_test2/index.html</loc>
     <lastmod>2025-06-01T17:05:39.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jpferreira.me/about.html</loc>
+    <lastmod>2025-07-28T21:15:24.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jpferreira.me/blog/2025-04-18_test/index.html</loc>
+    <lastmod>2025-06-01T17:05:39.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jpferreira.me/index.html</loc>
+    <lastmod>2025-06-04T21:27:32.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jpferreira.me/papers/instability-QHairy/index.html</loc>
+    <lastmod>2025-06-05T21:58:36.365Z</lastmod>
   </url>
   <url>
     <loc>https://www.jpferreira.me/projects.html</loc>

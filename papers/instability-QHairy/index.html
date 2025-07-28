@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>404 – José Ferreira</title>
+<title>Auxiliary Content for “Splitting the (Gravitational) Atom” – José Ferreira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,24 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="/site_libs/quarto-nav/headroom.min.js"></script>
-<link href="/./assets/images/favicon.png" rel="icon" type="image/png">
-<script src="/site_libs/clipboard/clipboard.min.js"></script>
-<script src="/site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="/site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="/site_libs/quarto-html/popper.min.js"></script>
-<script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
-<link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-7343403ecc3696882ff10b58cf5470f1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<script src="/site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../assets/images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1b8a7462e2cfb8cf58ae7cc8005e57ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -54,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="/assets/js/navbar-active-parent.js"></script>
+<script src="../../assets/js/navbar-active-parent.js"></script>
 <script>
   // Additional script to force active state for parent items
   document.addEventListener('DOMContentLoaded', function() {
@@ -71,6 +92,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Home</span>
     </a>
   </div>
@@ -91,11 +141,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/papers.html"> 
+    <a class="nav-link" href="../../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -104,17 +154,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-talks">    
         <li>
-    <a class="dropdown-item" href="/talks.html">
+    <a class="dropdown-item" href="../../talks.html">
  <span class="dropdown-text">Academic</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/outreach.html">
+    <a class="dropdown-item" href="../../outreach.html">
  <span class="dropdown-text">Outreach</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -130,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">404</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Auxiliary Content for “Splitting the (Gravitational) Atom”</h1></header>
 
 <header id="title-block-header">
 
@@ -138,34 +188,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<!-- CSS styling -->
 <style>
-  .quarto-title-block {
+  /* add fade in effect consistent with the rest of the webpage */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #quarto-content {
+    opacity: 0;
+    animation: fadeIn 0.75s ease forwards;
+  }
+
+  /* I want the webpage to have a title but not show in the content, so here's some CSS to do that */
+  #title-block-header .title {
     display: none;
   }
-  div.spacing {
-    margin-top: 275px;
-  }
-  img {
-  max-width: 75%;
-  height: auto;
-  }
-  @font-face {
-    font-family: 'MedievalFont';
-    src: url('assets/fonts/Blacklettersh.ttf') format('truetype');
-  }
-  .medieval-text {
-    font-family: 'MedievalFont', serif;
-    color: #cfb66a;
+
+  /* center the captions */
+  .quarto-float-caption-bottom {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
-<div style="text-align: center;">
-<h1 class="medieval-text">404</h1>
-<img src="/assets/images/404.png">
+<p style="text-align: center; margin-bottom: 0em;">
+Auxiliary content for the paper
+</p>
+<h1 style="text-align: center; margin-top: 0em;">
+Splitting the (Gravitational) Atom
+</h1>
+<p style="text-align: center; margin-bottom: 5em;">
+José Ferreira, Carlos Herdeiro, Eugen Radu, Miguel Zilhão
+</p>
+<p>In this work we performed time evolutions of a class of hairy black holes known as Q-Hairy BHs, introduced in <span class="citation" data-cites="Herdeiro2020">(<a href="#ref-Herdeiro2020" role="doc-biblioref">Herdeiro and Radu 2020</a>)</span>. These solutions were studied in spherical symmetry in <span class="citation" data-cites="Zhang2023">(<a href="#ref-Zhang2023" role="doc-biblioref">Zhang <em>et al</em> 2023</a>)</span>, where they found out numerical evidence to suggest they are stable and also have a viable formation mechanism. In this work, we performed time evolutions of these solutions without any assumptions regarding their symmetries.</p>
+<p>In short, these are a class of spherically symmetric, static BHs that are a solution to the Einstein-Maxwell-Scalar model</p>
+<p><span class="math display">\[
+\mathcal{L} =
+  \frac{R}{16 \pi} -
+  \frac{1}{4} F_{\alpha \beta} F^{\alpha \beta} -
+  (\widetilde{\nabla}_\alpha \phi)^* \widetilde{\nabla}^\alpha \phi - V(\left| \phi \right|^2)
+  \,,
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the Ricci scalar, <span class="math inline">\(F_{\mu \nu} \equiv \nabla_\mu A_\nu - \nabla_\nu A_\mu\)</span> is the Maxwell tensor, <span class="math inline">\(A_\mu\)</span> the 4-potential, <span class="math inline">\(\phi\)</span> is the (complex) scalar field and <span class="math inline">\(V(\left| \phi \right|^2)\)</span> its potential. The scalar field is coupled with the field via the coupled covariant derivative, defined as</p>
+<p><span class="math display">\[
+\widetilde{\nabla}_\mu \phi \equiv \nabla_\mu \phi + i q A_\mu \phi \,,
+\]</span></p>
+<p>where <span class="math inline">\(q\)</span> is the coupling constant between the scalar field and the electromagnetic field. We considered the following potential of the scalar field</p>
+<p><span class="math display">\[
+V(|\phi|) = \mu^2 |\phi|^2 (1 - 2 \lambda |\phi|^2)^2 \,.
+\]</span></p>
+<p>Performing time evolutions revealed two distinct outcomes: - <em>Fission</em>: When the BH is expelled by the hair; - <em>Absorption</em>: The BH absorbs its hair.</p>
+<p>In the first scenario the end state is a stable boson star plus a hairless charged BH, whereas in the second scenario its only a hairless charged BH. Remarkably, we found no evidence for stable solutions. Below, you will see a representative video of each outcome.</p>
+<div class="grid">
+<div class="g-col-12 g-col-md-6" style="text-align: left;">
+<div id="vid-fission" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-vid figure">
+<div aria-describedby="vid-fission-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="fission.mp4"></video></div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-fission-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Video&nbsp;1: Fission, the hair expels the BH.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6" style="text-align: left;">
+<div id="vid-absorption" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-vid figure">
+<div aria-describedby="vid-absorption-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="absorption.mp4"></video></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-absorption-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Video&nbsp;2: Absorption, the hair is absorbed by the BH.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In <a href="#vid-fission" class="quarto-xref">Video&nbsp;1</a> we see that the BH starts slowly moving towards the edge of the hair. The offset is exponential, so it speeds up rather quickly even though it can remain stationary for a few hundreds of units of time. The time it takes for it to start moving depends on the region of the parameter space. After the fission happens, you can see that the boson star loses resolution. This is a numerical artifact that is due to the fact that the grid is tracking the BH, and forces us to terminate the solution prematurely.</p>
+<p>In <a href="#vid-absorption" class="quarto-xref">Video&nbsp;2</a>, we see the BH absorbing the hair around it, leaving behind no trace of it.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Herdeiro2020" class="csl-entry" role="listitem">
+Herdeiro C A R and Radu E 2020 Spherical electro-vacuum black holes with resonant, scalar <span class="math inline">\(Q\)</span>-hair <em>The European Physical Journal C</em> <strong>80</strong> Online: <a href="https://arxiv.org/abs/2004.00336">https://arxiv.org/abs/2004.00336</a>
+</div>
+<div id="ref-Zhang2023" class="csl-entry" role="listitem">
+Zhang C-Y, Chen Q, Liu Y, Tian Y and Wang B 2023 Hairy black holes induced by nonlinear superadiant instability Online: <a href="https://arxiv.org/abs/2309.05045">https://arxiv.org/abs/2309.05045</a>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -590,9 +706,11 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
+<script>videojs(video_shortcode_videojs_video2);</script>
 
 
 
 
-<script src="/site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
