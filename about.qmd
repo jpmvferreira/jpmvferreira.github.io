@@ -41,7 +41,7 @@ format:
 ::: {#about-header}
 :::
 
-My name is José Ferreira and this is my website. In it, you will find everything that I think is relevant for me to share with the world. If you would like to know more about me, you can have a look at my short CV above. I make sure my publications are up-to-date in InspireHEP and all of my publicly available code is on Github. If you would like to contact me, feel free to drop me an e-mail.
+My name is José Ferreira and this is my website. In it, you will find everything that I think is relevant for me to share with the world. If you would like to know more about me, you can have a look at my [short CV](/assets/www/CV.pdf){target="_blank"}. My publications are up-to-date in [InspireHEP](https://inspirehep.net/authors/2094296){target="_blank"} and my code is made available on [Github](https://github.com/jpmvferreira/){target="_blank"}. To contact me, feel free to drop me an [e-mail](mailto:jose@jpferreira.me).
 
 :::: {.grid}
 
@@ -73,6 +73,9 @@ My name is José Ferreira and this is my website. In it, you will find everythin
 ::: {.g-col-12 .g-col-md-4 style="text-align: left;"}
 ### Teaching
 <div style="margin-top: -10px; margin-bottom: 10px; border-top: 1px solid #ccc;"></div>
+
+- **Assistant**, 09/2025 - Present <br>
+  *University of Aveiro*
 
 - **Assistant**, 02/2022 - 07/2023 <br>
   *Faculty of Sciences, University of Lisbon*
