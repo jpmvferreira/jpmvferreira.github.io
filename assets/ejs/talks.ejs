@@ -163,6 +163,9 @@
       <div class="talk-info">
         <div class="talk-title"><%- talk.title %></div>
         <div class="talk-meta"><%- talk.date %> • <%= talk.venue %></div>
+        <% if (talk.type) { %>
+          <div class="talk-meta"><%- talk.type %></div>
+        <% } %>
         <div class="talk-links">
           <% if (talk.pdf) { %>
             <a href="<%= talk.pdf %>" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
