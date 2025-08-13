@@ -7,18 +7,23 @@ listing:
   template: assets/ejs/projects.ejs
 
   contents:
+    - title: "Stag"
+      url:   "https://github.com/jpmvferreira/stag"
+      image: "assets/images/projects/stag.jpg"
+      description: "Upgrade your hierarchical filesystem with a tag-based structure."
+
+    - title: "GWcatalog"
+      url:   "https://github.com/jpmvferreira/gwcatalog"
+      image: "assets/images/projects/GWcatalog.jpg"
+      description: "Generate catalogs of standard siren events for LISA, Einstein Telescope and LVK."
+
     - title: "Espanso Mega Pack"
       url:   "https://github.com/jpmvferreira/espanso-mega-pack"
-      image: "assets/images/projects/Espanso-Mega-Pack.png"
+      image: "assets/images/projects/Espanso-Mega-Pack.jpg"
       description: "A collection of curated home built packages for the cross-platform text expander Espanso."
 
     - title: "rEFInd Ambience D&F"
       url:   "https://github.com/jpmvferreira/refind-ambience-deer-and-fireflies"
       image: "assets/images/projects/Refind-Ambience-D&F.jpg"
       description: "A simple and minimalist theme for the rEFInd boot loader."
-
-    - title: "GWcatalog"
-      url:   "https://github.com/jpmvferreira/gwcatalog"
-      image: "assets/images/projects/GWcatalog.jpg"
-      description: "Generate catalogs of standard siren events for LISA, Einstein Telescope and LVK."
 ---
