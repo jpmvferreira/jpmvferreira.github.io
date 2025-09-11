@@ -7,6 +7,12 @@ listing:
   template: assets/ejs/talks.ejs
 
   contents:
+    - title: "Flyer on the Deflection of Light"
+      date:  "September 26, 2025"
+      venue: "European Researchers' Night, Aveiro"
+      image: "assets/images/outreach/flyer.jpg"
+      pdf:   "assets/www/outreach/flyer.pdf"
+
     - title: "Echoes and Shadows: How to Detect Black Holes"
       date:  "April 30, 2025"
       venue: "University of Aveiro"
