@@ -7,6 +7,14 @@ listing:
   template: assets/ejs/papers.ejs
 
   contents:
+    - title: "Splitting the Gravitational Atom: Instabilities of Black Holes with Synchronized/Resonant Hair"
+      authors: J. Nicoules, <b>J. Ferreira</b>, C. Herdeiro, E. Radu, M. Zilhão
+      #journal:
+      arxiv: https://arxiv.org/abs/2509.20450
+      inspire: https://inspirehep.net/literature/2973366
+      #doi:
+      #github:
+
     - title: Testing $\Lambda$-free $f(Q)$ Cosmology
       authors: <b>J. Ferreira</b>, T. Barreiro, J. Mimoso, N. J. Nunes
       journal: Physical Review D
@@ -14,6 +22,7 @@ listing:
       inspire: https://inspirehep.net/literature/2702959
       doi: https://doi.org/10.1103/PhysRevD.108.063521
       github: https://github.com/jpmvferreira/testing-L-free-fQ-cosmology
+      #aux: papers/instability-QHairy/index.html
 
     - title: Constraining $f(Q)$ Cosmology with Standard Sirens
       authors: <b>J. Ferreira</b>
