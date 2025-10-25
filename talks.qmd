@@ -8,6 +8,13 @@ listing:
   template: assets/ejs/talks.ejs
 
   contents:
+    - title: "Black Holes as Particle Accelerators"
+      date:  "October 24 2025"
+      venue: "PhD Students Annual Meeting of Maths Department, University of Aveiro, Portugal"
+      type:  "Invited Talk"
+      image: "assets/images/talks/Annual-PhD-Dmat-2025.png"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/ETaA3U23DF9PszIBBZInYg8Bj98wCfREcMTVw1aHFtAoZw?e=eaJjwF"
+
     - title: "Splitting the (Gravitational) Atom"
       date:  "July 22 2025"
       venue: "New Frontiers in Numerical Relativity 2025, Mallorca, Spain"
