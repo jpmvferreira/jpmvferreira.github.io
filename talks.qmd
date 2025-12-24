@@ -8,6 +8,20 @@ listing:
   template: assets/ejs/talks.ejs
 
   contents:
+    - title: "Dynamics of Black Holes with Resonant Hair"
+      date:  "December 13 2025"
+      venue: "XVII Black Holes Workshop, Lisbon, Portugal"
+      type:  "Contributed Talk"
+      image: "assets/images/talks/XVII-BH-Workshop.png"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/IQAABsj5oMHMTpN9Gcktec79Abt397aPS3Q-t67GPKRvxA0?e=FcQIDX"
+
+    - title: "Fate of Black Holes with Resonant Hair"
+      date:  "December 12 2025"
+      venue: "Faculty of Sciences, University of Lisbon, Portugal"
+      type:  "Seminar"
+      image: "assets/images/talks/FCUL-Seminar-2025.png"
+      ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/IQBkUhWfSAByToB1708uYhUCAZImh43PC_PWgtomg4wAW2Q?e=UPoJsm"
+
     - title: "Black Holes as Particle Accelerators"
       date:  "October 24 2025"
       venue: "Annual Meeting of PhD Students from Maths Department, University of Aveiro, Portugal"
