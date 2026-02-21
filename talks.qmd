@@ -9,8 +9,8 @@ listing:
 
   contents:
     - title: "Dynamics of Black Holes with Resonant Hair"
-      date:  "December 13 2025"
-      venue: "XVII Black Holes Workshop, Lisbon, Portugal"
+      date:  "December 18 2025"
+      venue: "XVIII Black Holes Workshop, Lisbon, Portugal"
       type:  "Contributed Talk"
       image: "assets/images/talks/XVII-BH-Workshop.png"
       ppt: "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/IQAABsj5oMHMTpN9Gcktec79Abt397aPS3Q-t67GPKRvxA0?e=FcQIDX"
