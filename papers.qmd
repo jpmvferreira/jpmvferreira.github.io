@@ -12,7 +12,7 @@ listing:
       #journal:
       arxiv: https://arxiv.org/abs/2509.20450
       inspire: https://inspirehep.net/literature/2973366
-      #doi:
+      doi: https://doi.org/10.1103/1btp-58hy
       #github:
 
     - title: Testing $\Lambda$-free $f(Q)$ Cosmology
