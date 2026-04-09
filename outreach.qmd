@@ -17,17 +17,17 @@ listing:
       date:  "April 30, 2025"
       venue: "University of Aveiro"
       image: "assets/images/outreach/Xperimenta2025.png"
-      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/EXW5Y7Z986ZLhuDg74UcZScBPditNqGoFPJqvkWEyIgzUg?e=Dtm0l8"
+      ppt:   "https://1drv.ms/p/c/306b62ddbd0da9c2/IQBjlM9L_HrtTKSKRHYroJvRAapxJkq00Ce_lwCiplXUUhI?e=XXWDgL"
 
     - title: "Cosmic Jungle: Searching for Black Holes"
       date:  "May 3, 2024"
       venue: "University of Aveiro"
       image: "assets/images/outreach/Xperimenta2024.jpg"
-      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Eb5qdTNrC95HgqiVsxIkLEsBU-a7N35CuKWHIwvIrT7Flg?e=TEQzDR"
+      ppt:   "https://1drv.ms/p/c/306b62ddbd0da9c2/IQA0rypwaSh0SLQgXDFCo5ZfAWSfCNDscKsiIYTEZhCeOXM?e=afLU7Q"
 
     - title: "When a Black Hole Falls Inside... Another Black Hole"
       date:  "April 15, 2023"
       venue: "Torres Vedras, Portugal"
       image: "assets/images/outreach/Ignite-Iastro-Torres-Vedras.jpg"
-      ppt:   "https://ulisboa-my.sharepoint.com/:p:/g/personal/jpmferreira_fc_ul_pt/Ec29Pdf9JjpHv3S4dcTdrjEB2Abo3Qeu6NNWivAB8Ud6ng?e=6VH0Pw"
+      ppt:   "https://1drv.ms/p/c/306b62ddbd0da9c2/IQBCAxKt7jtEQ7M41YsVVgCxARHX0tGLIt8n7GQLC2WvH3k?e=BcXa6b"
 ---
