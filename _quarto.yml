@@ -8,6 +8,7 @@ project:
     - "!README.md"
     - "!personal/**"
     - "!node_modules/**"
+    - "!archive/**"
 
   # explicitely include these files
   resources:
