@@ -35,6 +35,7 @@ listing:
       type:  "Poster"
       image: "assets/images/talks/New-Frontiers-NR-2025-Poster.jpg"
       pdf: "https://1drv.ms/b/c/306b62ddbd0da9c2/IQCDmGDyho39Qqo8akYrZSO3ASa_rIW8McQHpfYP3ccRBp0?e=ZjlquH"
+      github: "https://github.com/jpmvferreira/new-frontiers-2025-poster"
 
     - title: "(In)stability of Q-Hairy Black Holes"
       date:  "May 21 2025"
@@ -74,6 +75,8 @@ listing:
       type:  "Poster"
       image: "assets/images/talks/Dark-Matter-and-Stars-2023.jpg"
       pdf: "https://1drv.ms/b/c/306b62ddbd0da9c2/IQDV_-AQO0f0QaiBNCHhzUXgAeQhlfaKRJbIQSmJq9WcVdo?e=UfZx6V"
+      github: "https://github.com/jpmvferreira/dark-matter-stars-2023-poster"
+      
 
     - title: "Forecasting $F(Q)$ Cosmology with $\\Lambda$CDM Background using Standard Sirens"
       date:  "May 4 2022"
