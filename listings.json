@@ -8,15 +8,12 @@
     "items": []
   },
   {
-    "listing": "/outreach.html",
+    "listing": "/blog.html",
     "items": []
   },
   {
-    "listing": "/blog.html",
-    "items": [
-      "/blog/2025-04-18_test/index.html",
-      "/blog/2025-04-17_test2/index.html"
-    ]
+    "listing": "/outreach.html",
+    "items": []
   },
   {
     "listing": "/projects.html",

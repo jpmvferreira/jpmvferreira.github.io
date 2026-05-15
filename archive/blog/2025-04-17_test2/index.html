@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2020-06-06">
+<meta name="description" content="Description">
 
-<title>talks – José Ferreira</title>
+<title>Title 2 – José Ferreira</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +25,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<link href="./assets/images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ad3de7f496647a2d8fdc1f8be97cf89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../../assets/images/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-c3a38459c9b6d3c5f752c708751e07ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -58,37 +93,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-talks-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-venue','listing-type','listing-image','listing-ppt','listing-pdf','listing-github','listing-recording',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-date","listing-venue","listing-type","listing-image","listing-ppt","listing-pdf","listing-github","listing-recording"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-talks-listings'] = new List('listing-talks-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="./assets/js/navbar-active-parent.js"></script>
+<script src="../../../assets/js/navbar-active-parent.js"></script>
 <script>
   // Additional script to force active state for parent items
   document.addEventListener('DOMContentLoaded', function() {
@@ -105,46 +111,17 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Home</span>
     </a>
   </div>
@@ -154,11 +131,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./papers.html"> 
+    <a class="nav-link" href="../../../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -167,17 +144,17 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-talks">    
         <li>
-    <a class="dropdown-item" href="./talks.html">
+    <a class="dropdown-item" href="../../../talks.html">
  <span class="dropdown-text">Academic</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./outreach.html">
+    <a class="dropdown-item" href="../../../outreach.html">
  <span class="dropdown-text">Outreach</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -188,382 +165,49 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<div id="listing-talks-listings" class="quarto-listing quarto-listing-container-custom">
-<!-- add academicons and font awesome -->
-<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></p>
-<!-- Add MathJax -->
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<!-- CSS styling -->
-<style>
-  /* Use theme variables from coeos.scss instead of custom variables */
-  .talks-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; /* Increased from 2rem to 3rem for more vertical spacing */
-    margin-top: 1.5rem;
-  }
-
-  .talk-item {
-    display: flex;
-    background-color: body-mix(16%);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-    animation: fadeIn 0.6s ease forwards;
-    opacity: 0;
-    border: 1px solid body-mix(50%);
-  }
-
-  .talk-item:nth-child(1)  { animation-delay: 0.05s; }
-  .talk-item:nth-child(2)  { animation-delay: 0.1s;  }
-  .talk-item:nth-child(3)  { animation-delay: 0.15s; }
-  .talk-item:nth-child(4)  { animation-delay: 0.2s;  }
-  .talk-item:nth-child(5)  { animation-delay: 0.25s; }
-  .talk-item:nth-child(6)  { animation-delay: 0.3s;  }
-  .talk-item:nth-child(7)  { animation-delay: 0.35s; }
-  .talk-item:nth-child(8)  { animation-delay: 0.4s;  }
-  .talk-item:nth-child(9)  { animation-delay: 0.45s; }
-  .talk-item:nth-child(10) { animation-delay: 0.5s;  }
-  .talk-item:nth-child(11) { animation-delay: 0.55s; }
-  .talk-item:nth-child(12) { animation-delay: 0.6s;  }
-
-  /* acho que o problema das rounded corners esta aqui, go figure */
-  .talk-image {
-    width: 280px;
-    height: 158px; /* 16:9 ratio */
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 7px; /* Apply rounded corners to all sides */
-  }
-
-  .talk-info {
-    padding: 1.2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .talk-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: #ffffff;
-    position: relative;
-    letter-spacing: 0.01em;
-    font-family: 'Latin Modern Math', 'STIX Two Math', 'STIX Two', 'Computer Modern', 'Times New Roman', serif;
-  }
-
-  /* MathJax specific styling to ensure consistency between title and LaTeX math */
-  .paper-title .MJX-TEX {
-    font-size: inherit !important;
-    color: inherit !important;
-  }
-
-  /* Add these styles to hide any anchor symbols */
-  .anchor-section {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-
-  .talk-meta {
-    font-size: 0.9rem;
-    opacity: 0.85;
-    margin-bottom: 0.8rem;
-    color: body-mix(67%); /* Use theme mix for muted text */
-  }
-
-  .talk-links {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .talk-links a {
-    text-decoration: none;
-    font-size: 1rem;
-    transition: all .35s ease; /* Match theme transition timing */
-  }
-
-  .talk-links a:hover {
-    transform: translateY(-2px);
-    opacity: 1;
-  }
-
-  .talk-links a i {
-    font-size: 16px;
-  }
-
-  .talk-links a::after {
-    content: attr(aria-label);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 4px 8px;
-    background: rgba(0,0,0,0.8);
-    border-radius: 3px;
-    font-size: 12px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-  }
-
-  .talk-links a:hover::after {
-    opacity: 1;
-  }
-
-  @media (max-width: 768px) {
-    .talk-item {
-      flex-direction: column;
-    }
-
-    .talk-image {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16/9;
-      border-radius: 7px; /* Apply rounded corners to all sides */
-    }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-<div class="talks-container">
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/XVII-BH-Workshop.png" alt="Dynamics of Black Holes with Resonant Hair" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Dynamics of Black Holes with Resonant Hair</div>
-        <div class="talk-meta">Dec 18, 2025 • XVIII Black Holes Workshop, Lisbon, Portugal</div>
-        
-          <div class="talk-meta">Contributed Talk</div>
-        
-        <div class="talk-links">
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQBoU3f0tV39TZF5dwmIzYLeAQA-UYaNdu4LdZzGIwLdUTE?e=Nc7xF6" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/FCUL-Seminar-2025.png" alt="Fate of Black Holes with Resonant Hair" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Fate of Black Holes with Resonant Hair</div>
-        <div class="talk-meta">Dec 12, 2025 • Faculty of Sciences, University of Lisbon, Portugal</div>
-        
-          <div class="talk-meta">Seminar</div>
-        
-        <div class="talk-links">
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQA_MD-txEVSR6qGcVJxASi4AfQqc0alkHwfcRAmvHscozY?e=YDtD3u" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/Annual-PhD-Dmat-2025.png" alt="Black Holes as Particle Accelerators" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Black Holes as Particle Accelerators</div>
-        <div class="talk-meta">Oct 24, 2025 • Annual Meeting of PhD Students from Maths Department, University of Aveiro, Portugal</div>
-        
-          <div class="talk-meta">Invited Talk</div>
-        
-        <div class="talk-links">
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQCH9zF164tJRIk6IMzwjFWEAS6M0bEINc6EpF39xu-ArNA?e=8bd58V" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/New-Frontiers-NR-2025-Poster.jpg" alt="Splitting the (Gravitational) Atom" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Splitting the (Gravitational) Atom</div>
-        <div class="talk-meta">Jul 22, 2025 • New Frontiers in Numerical Relativity 2025, Mallorca, Spain</div>
-        
-          <div class="talk-meta">Poster</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQCDmGDyho39Qqo8akYrZSO3ASa_rIW8McQHpfYP3ccRBp0?e=ZjlquH" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-          
-          
-            <a href="https://github.com/jpmvferreira/new-frontiers-2025-poster" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/NewFunFICO-2025.jpg" alt="(In)stability of Q-Hairy Black Holes" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">(In)stability of Q-Hairy Black Holes</div>
-        <div class="talk-meta">May 21, 2025 • NewFunFICO Meeting, Valencia, Spain</div>
-        
-          <div class="talk-meta">Contributed Talk</div>
-        
-        <div class="talk-links">
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQAmCuqcRBBWQJ9j7FW5FypXATzu2NvzI1wNsmMhr4QcT4g?e=m2Rhuh" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/VI-Amazonian-Symposium.jpg" alt="Non-linear Superradiance of Charged Black Holes: Beyond Spherical Symmetry" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Non-linear Superradiance of Charged Black Holes: Beyond Spherical Symmetry</div>
-        <div class="talk-meta">Nov 18, 2024 • VI Amazonian Symposium on Physics, Belém, Brazil</div>
-        
-          <div class="talk-meta">Contributed Talk</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQChe20rMPQISbabb37uVqRMAWrAWhnTeyVqqZPCVm9-9rc?e=GmGzEl" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQA6UonD3RABQZyhRytbIP3fAWo-ksKilguC4-zZWmSxWps?e=TEMqIm" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/XVI-BH-Workshop.jpg" alt="Using Standard Sirens to Test Non-Metric Theories of Gravity" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Using Standard Sirens to Test Non-Metric Theories of Gravity</div>
-        <div class="talk-meta">Dec 19, 2023 • XVI Black Holes Workshop, Porto, Portugal</div>
-        
-          <div class="talk-meta">Contributed Talk</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQDllzuY5qgCQ7EQmZm9-bePARCMUKexeqkL4v9HvatY97A?e=BWTIdf" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQCjNDBzHnQuSaV7A9UMHgKGAcJc_RBG_81gK4Hf4hoKT7I?e=Pg3I2v" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/Seminar-Grav-2023.jpg" alt="Cosmological Tests on Non-Metricity Based Theories of Gravity" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Cosmological Tests on Non-Metricity Based Theories of Gravity</div>
-        <div class="talk-meta">Sep 20, 2023 • Gr@v, University of Aveiro</div>
-        
-          <div class="talk-meta">Seminar</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQBTq9-J7MK0QJOEBXdT6G1zAVJL8S58nNS5jTcvCCOGIFk?e=g0je5n" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQDb3NKQhVSLQ4xftLgnoR2TAeTFkLdnXhpnEk39-lZsOH0?e=ZlSxFT" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-            <a href="https://youtu.be/6rRZ17WFGts?si=TfQB8O00qbb6wEJ4" target="_blank" aria-label="Recording"><i class="fa-solid fa-video"></i></a>
-          
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/Dark-Matter-and-Stars-2023.jpg" alt="Testing $\Lambda$-Free $f(Q)$ Cosmology" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Testing $\Lambda$-Free $f(Q)$ Cosmology</div>
-        <div class="talk-meta">May 3, 2023 • Dark Matter and Stars, Lisbon, Portugal</div>
-        
-          <div class="talk-meta">Poster</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQDV_-AQO0f0QaiBNCHhzUXgAeQhlfaKRJbIQSmJq9WcVdo?e=UfZx6V" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-          
-          
-            <a href="https://github.com/jpmvferreira/dark-matter-stars-2023-poster" target="_blank" aria-label="Github"><i class="fa-brands fa-github"></i></a>
-          
-        </div>
-      </div>
-    </div>
-  
-    <div class="talk-item">
-      <img src="assets/images/talks/IberiCOS-2022.jpg" alt="Forecasting $F(Q)$ Cosmology with $\Lambda$CDM Background using Standard Sirens" class="talk-image">
-      <div class="talk-info">
-        <div class="talk-title">Forecasting $F(Q)$ Cosmology with $\Lambda$CDM Background using Standard Sirens</div>
-        <div class="talk-meta">May 4, 2022 • Iberian Cosmology Meeting 2022, Barcelona, Spain</div>
-        
-          <div class="talk-meta">Contributed Talk</div>
-        
-        <div class="talk-links">
-          
-            <a href="https://1drv.ms/b/c/306b62ddbd0da9c2/IQAtir2U2OXcRZeu861nzAajAYbFBwj-JmILUMyGarj5Eac?e=dKJoCg" target="_blank" aria-label="PDF"><i class="fa-solid fa-file-pdf"></i></a>
-          
-          
-            <a href="https://1drv.ms/p/c/306b62ddbd0da9c2/IQBVM_NLhz2hSqowJ34b0-pAAXcpGKOR7FInTrjhTwMTsgs?e=Vj6dbL" target="_blank" aria-label="Powerpoint"><i class="fa-solid fa-file-powerpoint"></i></a>
-          
-          
-            <a href="https://youtu.be/1SeXRTaK-Xw" target="_blank" aria-label="Recording"><i class="fa-solid fa-video"></i></a>
-          
-          
-        </div>
-      </div>
-    </div>
-  
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Title 2</h1>
 </div>
 
+<div>
+  <div class="description">
+    Description
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 6, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="370b716f" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hi"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hi</code></pre>
+</div>
+</div>
 
 
 
@@ -997,5 +641,5 @@ window.Quarto = {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
