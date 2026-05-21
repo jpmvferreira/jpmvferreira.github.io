@@ -7,6 +7,12 @@ listing:
   template: assets/ejs/talks.ejs
 
   contents:
+    - title: "Black Holes: Cosmic Particle Accelerators"
+      date:  "May 21, 2026"
+      venue: "Pint of Science 2026, Aveiro"
+      image: "assets/images/outreach/pint-of-science-2026.png"
+      ppt:   "https://1drv.ms/p/c/306b62ddbd0da9c2/IQCzXV9hVjUdS7Q18ufKhcbXASCjzZ61TjiP_mw96UqcriY?e=jYnGVq"
+
     - title: "Flyer on the Deflection of Light"
       date:  "September 26, 2025"
       venue: "European Researchers' Night, Aveiro"
