@@ -11,7 +11,7 @@ listing:
       authors: <b>J. Ferreira</b>, Gabriele Bozzola, Carlos Herdeiro, Vasileios Paschalidis, Miguel Zilhão
       #journal:
       arxiv: https://arxiv.org/abs/2605.20493
-      inspire: 
+      inspire: https://inspirehep.net/literature/3158151
       #doi:
       github: https://github.com/jpmvferreira/dual-collision
 
