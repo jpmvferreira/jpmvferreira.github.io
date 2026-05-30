@@ -9,7 +9,7 @@ listing:
   contents:
     - title: Electromagnetic duality degeneracy in dynamical black hole mergers
       authors: <b>J. Ferreira</b>, Gabriele Bozzola, Carlos Herdeiro, Vasileios Paschalidis, Miguel Zilhão
-      #journal:
+      journal: pre-print
       arxiv: https://arxiv.org/abs/2605.20493
       inspire: https://inspirehep.net/literature/3158151
       #doi:
@@ -17,7 +17,7 @@ listing:
 
     - title: Spontaneous spherical symmetry breaking of black holes with resonant hair
       authors: <b>J. Ferreira</b>, C. Herdeiro, E. Radu, M. Zilhão
-      #journal:
+      journal: pre-print
       arxiv: https://arxiv.org/abs/2604.22437
       inspire: https://inspirehep.net/literature/3148982
       #doi:
@@ -25,7 +25,7 @@ listing:
 
     - title: "Splitting the Gravitational Atom: Instabilities of Black Holes with Synchronized/Resonant Hair"
       authors: J. Nicoules, <b>J. Ferreira</b>, C. Herdeiro, E. Radu, M. Zilhão
-      #journal:
+      journal: Physical Review D
       arxiv: https://arxiv.org/abs/2509.20450
       inspire: https://inspirehep.net/literature/2973366
       doi: https://doi.org/10.1103/1btp-58hy
