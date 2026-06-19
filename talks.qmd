@@ -8,6 +8,13 @@ listing:
   template: assets/ejs/talks.ejs
 
   contents:
+    - title: "Electromagnetic Duality in Black Hole Mergers"
+      date:  "June 17 2026"
+      venue: "NewFunFICO Meeting, Frankfurt, Germany"
+      type:  "Contributed Talk"
+      image: "assets/images/talks/NewFunFICO-2026.jpg"
+      ppt: "https://1drv.ms/p/c/306b62ddbd0da9c2/IQCgs3lcJVVdRrrkT1MkbOfTAdLeEHTRQomYcsbAsF3iY9w?e=dgFOyr"
+
     - title: "Dynamics of Black Holes with Resonant Hair"
       date:  "December 18 2025"
       venue: "XVIII Black Holes Workshop, Lisbon, Portugal"
@@ -76,7 +83,7 @@ listing:
       image: "assets/images/talks/Dark-Matter-and-Stars-2023.jpg"
       pdf: "https://1drv.ms/b/c/306b62ddbd0da9c2/IQDV_-AQO0f0QaiBNCHhzUXgAeQhlfaKRJbIQSmJq9WcVdo?e=UfZx6V"
       github: "https://github.com/jpmvferreira/dark-matter-stars-2023-poster"
-      
+
 
     - title: "Forecasting $F(Q)$ Cosmology with $\\Lambda$CDM Background using Standard Sirens"
       date:  "May 4 2022"
