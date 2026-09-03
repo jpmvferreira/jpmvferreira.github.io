@@ -20,6 +20,11 @@ format:
     # custom theme
     theme: assets/stylesheets/coeos.scss
 
+    # papers.ejs/talks.ejs load and configure their own MathJax to render the literal '$...$' in the listing YAML
+    # Without this, quarto still notices the '$' in the YAML and auto-injects a second, MathJax instance,
+    # which clobbers the manual one and leaves the '$' unrendered.
+    html-math-method: plain
+
     # this is responsible for providing highlight on parent navbar entry when a child is selected
     # requires the file `assets/js/navbar-active-parent.js`
     include-in-header:
