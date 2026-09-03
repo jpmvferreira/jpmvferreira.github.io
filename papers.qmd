@@ -17,10 +17,10 @@ listing:
 
     - title: Spontaneous spherical symmetry breaking of black holes with resonant hair
       authors: <b>J. Ferreira</b>, C. Herdeiro, E. Radu, M. Zilhão
-      journal: pre-print
+      journal: Physical Review D
       arxiv: https://arxiv.org/abs/2604.22437
       inspire: https://inspirehep.net/literature/3148982
-      #doi:
+      doi: https://doi.org/10.1103/n179-gxrz
       github: https://github.com/jpmvferreira/instability-QhairyBH
 
     - title: "Splitting the Gravitational Atom: Instabilities of Black Holes with Synchronized/Resonant Hair"
